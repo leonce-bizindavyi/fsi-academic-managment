@@ -10,7 +10,7 @@ function Navbar({handleSideOpen
     setOpenProfile(!openProfile)
   }
   return (
-    <header className="flex w-full items-center justify-between border-b-2 border-gray-200 bg-white p-2">
+    <header className="flex w-full items-center fixed z-30 justify-between border-b-2 border-gray-200 bg-white p-2">
       {/* <!-- logo --> */}
       <div className="flex items-center space-x-2">
         <button onClick={handleSideOpen} className='cursor-pointer'>

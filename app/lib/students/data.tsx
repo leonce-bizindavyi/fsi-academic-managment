@@ -1,10 +1,10 @@
 import executeQuery from '@/utils/db';
-import { all_staff_members } from '../definitions';
+import { student } from '../definitions';
 
-export async function getAllStaffMembers() {
+export async function getAllStudents() {
   try {
     // Execute the query and handle potential errors
-    const rows = await executeQuery('SELECT * FROM staf_table ORDER BY Id_staf DESC LIMIT 10', []) as all_staff_members[];
+    const rows = await executeQuery('SELECT * FROM stud_table ORDER BY Id_st DESC LIMIT 5', []) as student[];
 
     // Validate and process the retrieved data
     if (!Array.isArray(rows)) {
@@ -13,17 +13,17 @@ export async function getAllStaffMembers() {
 
     const staffMembers = rows.map((row) => {
       return {
-        Id_staf: row.Id_staf, // Assuming an 'id' column exists
-        name_staff: row.name_staff,
-        period: row.period,
+        Id_st: row.Id_st, // Assuming an 'id' column exists
+        name_st: row.name_st,
+        matr_st: row.matr_st,
         date_naiss: row.date_naiss,
         sexe: row.sexe,
-        phone_st: row.phone_st,
+        tel_st: row.tel_st,
         email_st: row.email_st,
-        uniid_staf: row.uniid_staf,
+        st_code: row.st_code,
+        uniid_st:row.uniid_st,
         create_at: row.create_at,
         update_at: row.update_at,
-
       };
     });
 
@@ -38,7 +38,7 @@ export async function getAllStaffMembers() {
 export async function getoneStaffById(uniid: string) {
   try {
     // Execute the query and handle potential errors
-    const rows = await executeQuery('SELECT * FROM staf_table WHERE uniid_staf=?', [uniid]) as all_staff_members[];
+    const rows = await executeQuery('SELECT * FROM staf_table WHERE uniid_staf=?', [uniid]) as student[];
 
     // Validate and process the retrieved data
     if (!Array.isArray(rows)) {
@@ -52,4 +52,3 @@ export async function getoneStaffById(uniid: string) {
     throw error;
   }
 }
-

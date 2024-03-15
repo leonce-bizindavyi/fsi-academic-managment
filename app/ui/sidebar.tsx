@@ -3,9 +3,9 @@ import React from 'react'
 
 export default function Sidebar({ openSide }: { openSide: string }) {
   return (
-    <aside className={`flex w-56 ${openSide} flex-col space-y-2 border-r-2 h-auto border-gray-200 bg-white p-2`}
+    <aside className={`flex w-56 ${openSide} flex-col mt-16 fixed z-20 space-y-2 border-r-2 h-screen border-gray-200 bg-white p-2`}
       x-show="asideOpen">
-      <Link href="/" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+      <Link href="/dashboard" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
           stroke="currentColor" className="w-8 h-8">
           <path strokeLinecap="round" strokeLinejoin="round"
@@ -34,12 +34,7 @@ export default function Sidebar({ openSide }: { openSide: string }) {
 
       <Link href="/department" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
         <span className="text-2xl"><i className="bx bx-heart"></i></span>
-        <span className="text-xl  font-semibold">Department</span>
-      </Link>
-
-      <Link href="/histories" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-        <span className="text-2xl"><i className="bx bx-user"></i></span>
-        <span className="text-xl  font-semibold">Histories</span>
+        <span className="text-xl  font-semibold">Filières</span>
       </Link>
       <Link href="/horaires" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
         <span className="text-2xl"><i className="bx bx-user"></i></span>

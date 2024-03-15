@@ -1,3 +1,5 @@
+import Statcad from "@/app/ui/dashboard/statcard";
+
 export default function Page(){
-    return <div>Statistiques</div>
+    return <Statcad />
 }

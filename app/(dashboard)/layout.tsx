@@ -9,16 +9,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [openSide, setOpenSide] = useState("")
-  const handleSideOpen = () =>{
-      if(openSide==='') setOpenSide('-ml-56')
-      else setOpenSide('')
+  const handleSideOpen = () => {
+    if (openSide === '') setOpenSide('-ml-56')
+    else setOpenSide('')
   }
   return (
     <>
-    <Navbar handleSideOpen={handleSideOpen} />
-    <div className="flex">
+      <Navbar handleSideOpen={handleSideOpen} />
+      <div className="flex flex-row">
         <Sidebar openSide={openSide} />
-    </div>
+        <div className="space-y-3 ml-56 mt-16 w-full ">
+          {children}
+        </div>
+      </div>
     </>
   );
 }

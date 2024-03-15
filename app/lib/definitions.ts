@@ -14,3 +14,44 @@ export type Staff = {
   create_at: string;
   update_at: string;
 }
+export type CountResult = {
+  id: number;
+  value: string;
+  count: number;
+}
+export type loginData = {
+  email: string;
+  password: string;
+}
+
+export type all_staff_members = {
+  Id_staf: number;
+  name_staff: string;
+  period: string;
+  date_naiss: string;
+  sexe: string;
+  phone_st: string;
+  email_st: string;
+  uniid_staf: string;
+  create_at: string;
+  update_at: string;
+}
+
+export type student = {
+  Id_st: number;
+  uniid_st: string;
+  name_st: string;
+  matr_st: string;
+  st_code: string;
+  sexe: string;
+  date_naiss: string;
+  tel_st: string;
+  email_st: string;
+  create_at: string;
+  update_at: string;
+}
+export type filiere = {
+  id: number;
+  fil: string;
+  dep: string;
+}
